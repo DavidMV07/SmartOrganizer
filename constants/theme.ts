@@ -5,26 +5,41 @@
 
 import { Platform } from 'react-native';
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
+// Paleta preferida: negro y azul (rango oscuro -> claro)
+const primaryBlue = '#0a84ff'; // azul vivo
+const primaryBlueLight = '#4fb3ff';
+const nearBlack = '#0b0b0b';
 
 export const Colors = {
   light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
+    text: '#08111a',
+    background: '#f6f8fb',
+    card: '#ffffff',
+    tint: primaryBlue,
+    tintLight: primaryBlueLight,
+    accent: primaryBlue,
+    icon: '#334155',
+    muted: '#6b7280',
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    text: '#e6eef9',
+    background: nearBlack,
+    card: '#0f1724',
+    tint: primaryBlueLight,
+    tintLight: primaryBlue,
+    accent: primaryBlueLight,
+    icon: '#9aa9c7',
+    muted: '#94a3b8',
   },
+};
+
+// spacing scale
+export const Spacing = {
+  xs: 4,
+  sm: 8,
+  md: 12,
+  lg: 16,
+  xl: 24,
 };
 
 export const Fonts = Platform.select({
