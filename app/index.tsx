@@ -159,7 +159,7 @@ export default function Index() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.header}>🧭 Gestor Jerárquico de Tareas</Text>
+      <Text style={styles.header}>SmartOrganizer</Text>
 
       <View style={styles.addRow}>
         <TextInput
@@ -169,15 +169,6 @@ export default function Index() {
           style={styles.input}
         />
         <Button title="Agregar" onPress={addTask} />
-      </View>
-
-      {/* Analytics */}
-      <View style={styles.statsContainer}>
-        <Text style={styles.statsHeader}>📊 Estadísticas</Text>
-        <Text>Total tareas: {stats.totalTasks}</Text>
-        <Text>Tareas completadas: {stats.completedTasks}</Text>
-        <Text>Tasa de completado: {stats.completionRate}</Text>
-        <Text>Profundidad máxima: {stats.maxDepth}</Text>
       </View>
       {/* Modal para editar tarea principal */}
       {mainModalVisible && (
@@ -249,13 +240,21 @@ export default function Index() {
                       </View>
                     ))}
                 </ScrollView>
-
                 <Button title="Cerrar" onPress={closeSubModal} />
               </View>
             </View>
           </Modal>
         );
       })()}
+
+    {/* Analytics */}
+    <View style={styles.statsContainer}>
+      <Text style={styles.statsHeader}>📊 Estadísticas</Text>
+      <Text>Tareas completadas: {stats.completedTasks}</Text>
+      <Text>Tasa de completado: {stats.completionRate}</Text>
+      <Text>Total tareas: {stats.totalTasks}</Text>
+      <Text>Profundidad máxima: {stats.maxDepth}</Text>
+    </View>
 
       <View style={{ flex: 1, width: "100%" }}>
         <TaskList

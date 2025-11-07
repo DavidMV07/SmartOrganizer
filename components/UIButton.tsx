@@ -2,7 +2,7 @@ import React from 'react';
 import { Pressable, StyleSheet, Text, TextStyle, ViewStyle } from 'react-native';
 import { Colors, Spacing } from '../constants/theme';
 
-type Variant = 'primary' | 'ghost' | 'danger';
+type Variant = 'primary' | 'ghost' | 'danger' | 'check' | 'warning';
 
 interface Props {
   title: string;
@@ -22,6 +22,7 @@ export default function UIButton({ title, onPress, variant = 'primary', style, t
         variant === 'ghost' && styles.ghost,
         variant === 'danger' && styles.danger,
         variant === 'check' && styles.check,
+        variant === 'warning' && styles.warning,
         pressed && styles.pressed,
         style,
       ]}
@@ -49,8 +50,11 @@ const styles = StyleSheet.create({
   danger: {
     backgroundColor: '#dc2626',
   },
-  check:{
+  check: {
     backgroundColor: '#1cae0cff',
+  },
+  warning: {
+    backgroundColor: '#e59124ff'
   },
   pressed: {
     opacity: 0.85,

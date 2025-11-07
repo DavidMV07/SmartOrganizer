@@ -57,7 +57,7 @@ export const TaskList = ({ tasks, onReorder, onAddSubtask, onEdit, onDelete, onT
             <View style={{ width: Spacing.sm }} />
             <UIButton title='＋' onPress={() => onAddSubtask(item.id)} variant='primary' />
             <View style={{ width: Spacing.sm }} />
-            <UIButton title='✎' onPress={() => onEdit(item.id)} />
+            <UIButton title='✎' onPress={() => onEdit(item.id)} variant='warning'/>
             <View style={{ width: Spacing.sm }} />
             <UIButton title='🗑' onPress={() => onDelete(item.id)} variant='danger' />
           </View>
