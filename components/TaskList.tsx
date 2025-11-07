@@ -17,7 +17,6 @@ type Props = {
 export const TaskList = ({ tasks, onReorder, onAddSubtask, onEdit, onDelete, onToggle }: Props) => {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
-  // Web: simple HTML5 drag & drop via react-native-web
   if (Platform.OS === 'web') {
     const handleDragStart = (e: any, id: string) => {
       try { e.dataTransfer.setData('text/plain', id); } catch { }
@@ -74,7 +73,6 @@ export const TaskList = ({ tasks, onReorder, onAddSubtask, onEdit, onDelete, onT
     return <View>{tasks.map((t) => renderWebItem(t))}</View>;
   }
 
-  // Mobile: draggable flatlist powered by gestures
   const renderItem = ({ item, drag, isActive }: RenderItemParams<Task>) => (
     <Pressable
       onLongPress={drag}
